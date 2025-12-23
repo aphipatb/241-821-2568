@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+<style>
+    @font-face {
+        font-family: 'kanit';
+        src: url(./Kanit/Kanit-Regular.ttf);
+    }
+    body{background-color: rgba(160, 228, 3, 0.529);
+        font-family: 'kanit';
+}
+    #register-from{color: rgb(255, 144, 127);
+        padding-left: 20px;
+        margin-left: 20px;
+        padding-right: 20px;
+        margin-right: 20px;
+        border: 1px solid black;
+        text-align: center;
+
+
+    }
+    .from-control{
+        border: 2px solid black;
+        margin-bottom: 10px;
+    }
+    
+    /* 1.เเต่งใคร(id , class,com) 2.เเต่งอะไร?*/
+</style>
+
+
+    <!--ส่วนนี้จะไม่เเสดงผลบนเว็บิBroeser-->
+
+</head>
+<body>
+
+    <!--ส่วนนี้จะไม่เเสดงผลบนเว็บิBroeser-->
+
+    <div id="register-from">Register Form</div>
+    ชื่อ : <input class="from-control"  type="text" name="name">
+    นาทสกุล : <input class="from-control" type="text" name="surnamne"><br>
+    อายุ : <input type="number" name="age" min="0" max="150"><br>
+    เพศ :
+    <input type="radio" name="gender" value="male">ชาย
+    <input type="radio" name="gender" value="female">หญิง<br>
+    งานอดิเรก :
+    <input type="checkbox" name="hobby" value="reading">อ่านหนังสือ
+    <input type="checkbox" name="hobby" value="treveling">ท่องเที่ยว
+    <input type="checkbox" name="hobby" value="sports">กีฬา<br>
+    คำอธิบายตังเอง : <br>
+    <textarea name="descripton" rows="4" cols="50"></textarea><br>
+    <input type="submit" value="submit">   
+</body>
+</html>
