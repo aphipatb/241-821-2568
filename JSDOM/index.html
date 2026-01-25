@@ -1,71 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    เพศ:
-    <input type="radio" name="gender" value="male" onchange= "onchangeGGender()" checked = "true"> Male
-    <input type="radio" name="gender" value ="female" onchange= "onchangeGGender()"> Female
+    <div> </div>
+    <div id="content"></div>
+    <input type="checkbox" name="interest" value="กีฬา"> กีฬา
+    <input type="checkbox" name="interest" value="ดนตรี"> ดนตรี
+    <input type="checkbox" name="interest" value="อ่านหนังสือ"> อ่านหนังสือ
+    <br><br>
+    <button onclick="submitInterest()">ส่งข้อมูล</button>
 
-    <!-- <button onclick="userClick()">Submit</button>
-    <div onclick="devClick()">dev clicked</div> -->
+    <script>
+        function submitInterest() {
+            // ดึงข้อมูลจาก checkbox ที่ถูกเลือก
+            let checkboxes = document.querySelectorAll('input[name="interest"]')
+            let contentHTML = '<ul>'
 
+            // เอา value ของ checkbox ที่ถูกเลือกออกมา
+            for (let i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    console.log(checkboxes[i].value) // เลือกแสดงค่าใน console
+                    contentHTML += '<li>' + checkboxes[i].value + '</li>'
+                }
+            }
+            // วนค่าที่เลือกใส่กลับไปที่ html
+            contentHTML += '</ul>'
 
-
-
-    <!-- งานอดิเรก:
-    <input type="checkbox" name="hobby" value="football" checked> Football
-    <input type="checkbox" name="hobby" value="basketball"> basketball
-    <input type="checkbox" name="hobby" value="tennis" checked> Tennis
- -->
-
-    <!-- ชื่อ: <input
-        type="text"
-        name="fname"
-        value="John "> -->
-    <!-- นามสกุล: <input
-        id="surname"
-        class="input"
-        type="text"
-        >
-     -->
-   
-<script>
-    function onchangeGGender(radio) {
-    let gernderInputs = document.querySelectorAll('input[name="gender"]');
-    for (let i = 0; i < gernderInputs.length; i++) {
-        if (gernderInputs[i].checked) {
-            console.log("เพศที่มีเลือก: " + gernderInputs[i].value);
+            // ใส่ html ที่สร้างใหม่ลงใน div div="content"
+            let contentDiv = document.getElementById('content')
+            contentDiv.innerHTML = contentHTML
         }
-    }
-    }
-// function userClick() {
-//     console.log("User clicked the button");}
-// function devClick() {
-//     console.log("Developer clicked the div");}
+    </script>
 
-
-    // let checkboxs = document.querySelectorAll('input[name="hobby"]');
-    // for(let i = 0; i < checkboxs.length; i++) {
-    //     console.log(checkboxs[i].value);
-    // }
-
-
-
-
-
-
-        // const fnameInput = document.querySelector('input[name="fname"]');
-        // console.log(fnameInput.value);
-
-        // for (let i = 0; i < nameInput.length; i++) {
-        //     console.log(nameInput[i].value);
-        // }
-        
-
-</script>
 </body>
+
 </html>

@@ -1,0 +1,135 @@
+/* นำเข้าฟอนต์ Tahoma/Sans-serif */
+@import url('https://fonts.googleapis.com/css2?family=Tahoma:wght@400;700&display=swap');
+
+/* --- ส่วนที่เปลี่ยนเป็นสีแดง --- */
+body {
+    margin: 0;
+    padding: 0;
+    /* ไล่สีจาก แดงเข้ม ไป ดำ (ดูดุดัน) */
+    background-image: radial-gradient(circle at center, #8b0000 0%, #3a0000 70%, #1a0000 100%);
+    /* หรือถ้าชอบแดงล้วนให้ใช้บรรทัดนี้แทน: background-color: #8b0000; */
+    
+    font-family: 'Tahoma', sans-serif;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* กรอบโปรแกรม (ตัดกับพื้นหลังแดง) */
+.launcher-window {
+    width: 380px;
+    background-color: #1a1a1a; /* ตัวกล่องสีดำด้าน */
+    border: 1px solid #ff3333; /* ขอบเรืองแสงสีแดงสด */
+    box-shadow: 0 0 30px rgba(200, 0, 0, 0.4); /* เงาฟุ้งสีแดง */
+    position: relative;
+    padding-bottom: 20px;
+    border-radius: 4px; /* มนนิดๆ */
+}
+
+/* แถบหัวด้านบน */
+.header-bar {
+    background: linear-gradient(to bottom, #d90000, #800000); /* แดงสดกว่าพื้นหลัง */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    border-bottom: 1px solid #500000;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+/* พื้นที่เนื้อหา */
+.content-area {
+    padding: 20px;
+    text-align: center;
+}
+
+/* จอแสดงผล (สีดำสนิทเพื่อให้ข้อความเด่น) */
+#content {
+    background-color: #000;
+    border: 1px solid #550000; /* ขอบแดงเลือดหมู */
+    min-height: 80px;
+    margin-bottom: 20px;
+    padding: 10px;
+    text-align: left;
+    font-size: 12px;
+    overflow-y: auto;
+    box-shadow: inset 0 0 10px rgba(255, 0, 0, 0.1);
+}
+
+/* รายการผลลัพธ์ */
+#content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#content li {
+    color: #ffcccc; /* สีชมพูอ่อน/แดงจางๆ อ่านง่าย */
+    padding: 4px 0;
+    border-bottom: 1px dashed #440000;
+}
+
+#content li::before {
+    content: "► ";
+    color: #ff0000; /* ลูกศรสีแดงสด */
+}
+
+/* Checkbox Style */
+.options {
+    text-align: left;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+input[type="checkbox"] {
+    accent-color: #ff0000; /* ติ๊กแล้วเป็นสีแดง */
+    transform: scale(1.2);
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+label {
+    margin-right: 15px;
+    font-size: 14px;
+    color: #ff8888; /* ตัวหนังสือสีแดงอ่อน */
+    cursor: pointer;
+    font-weight: bold;
+}
+
+label:hover {
+    color: #fff;
+    text-shadow: 0 0 5px #ff0000; /* เรืองแสงเมื่อเอาเมาส์ชี้ */
+}
+
+/* ปุ่มกดแดงเดือด */
+button {
+    background: linear-gradient(to bottom, #ff3333, #990000);
+    border: 1px solid #fff; /* ขอบขาวตัดแดง */
+    color: white;
+    font-weight: bold;
+    font-family: 'Tahoma', sans-serif;
+    padding: 12px 45px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    text-shadow: 1px 1px 1px #550000;
+    transition: all 0.2s;
+    text-transform: uppercase; /* ตัวพิมพ์ใหญ่ทั้งหมด */
+}
+
+button:hover {
+    background: linear-gradient(to bottom, #ff6666, #cc0000);
+    box-shadow: 0 0 20px #ff0000; /* ไฟลุก */
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
