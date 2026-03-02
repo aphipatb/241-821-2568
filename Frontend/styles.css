@@ -17,6 +17,23 @@ body {
     height: 100vh;
     overflow: hidden;
 }
+.message{
+    background-color: hwb(238 29% 27%);
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 15px;
+    display:  none;
+}
+.message.success {
+    background-color: #4CAF50; /* สีเขียวสำหรับข้อความสำเร็จ */
+    color: white;
+    display: block;
+}
+.message.danger {
+    background-color: #f44336; /* สีแดงสำหรับข้อความผิดพลาด */
+    color: white;
+    display: block;
+}
 
 /* กรอบโปรแกรม (ตัดกับพื้นหลังแดง) */
 .launcher-window {
