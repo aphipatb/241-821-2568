@@ -85,10 +85,40 @@ app.delete('/users/:id', async (req, res) => {
     }
 });
 
+const validateData = (userData) => {
+  let errors = [];
+  if (!userData.firstName) {
+    errors.push('กรุณากรอกชื่อ');
+  }
+  if (!userData.lastName) {
+    errors.push('กรุณากรอกนามสกุล');
+  }
+  if (!userData.age) {
+    errors.push('กรุณากรอกอายุ');
+  }
+  if (!userData.gender) {
+    errors.push('กรุณาเลือกเพศ');
+  }
+  if (!userData.interests) {
+    errors.push('กรุณาเลือกความสนใจอย่างน้อย 1 อย่าง');
+  }
+  if (!userData.description) {
+    errors.push('กรุณากรอกคำอธิบายเกี่ยวกับตัวเอง');
+  }
+  return errors;
+}
+
 // path = POST /users สำหรับเพิ่ม user ใหม่
 app.post('/users', async (req, res) => {
     try {
     let user = req.body;
+    const errors = validateData(user);
+    if (errors.length > 0) {
+        throw {
+            message: 'กรอกข้อมูลไม่ครบถ้วน',
+            errors: errors
+        }
+    }
     const result = await conn.query('INSERT INTO users SET ?', user);
     console.log('result',result)
     res.json({
@@ -97,10 +127,12 @@ app.post('/users', async (req, res) => {
     });
 
     } catch (error) {
-        console.error('Error',error);
+        const errorMessage = error.message || 'Error creating user';
+        const errors = errors.errors || [];
+        console.error('Error creating user',error.message);
         res.status(500).json({
-            message: 'Error adding user',
-            error: error
+            message: errorMessage,
+            errors: errors
         });
     }
 })
