@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "241_821",
+			"path": ".."
+		},
+		{
+			"name": "241-821-2568",
+			"path": "../../241-821-2568"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "241_821"
+	}
+}

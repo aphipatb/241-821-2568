@@ -138,10 +138,10 @@ app.post('/users', async (req, res) => {
 })
 
 
-app.get('/user/:id', async (req, res) => {
+app.get('/users/:id', async (req, res) => {
     try{
-        let id = req.params.id;
-        const result = await conn.query('SELECT * FROM users WHERE id = ?', id);
+        let userid = req.params.id;
+        const result = await conn.query('SELECT * FROM users WHERE id = ?', userid);
         if (result[0].length == 0) {
             throw {statusCode: 404, message: 'User not found'};
         }
